@@ -1,3 +1,4 @@
+package com.skilrock.stepdefinitions.runner;
 import org.junit.runner.RunWith;
 
 import cucumber.api.CucumberOptions;
@@ -7,9 +8,10 @@ import cucumber.api.junit.Cucumber;
 
 @CucumberOptions(
 		features = "src/test/resources",
-        glue = "com.skilrock.first"
+        glue = "com.skilrock.stepdefinitions",
+        tags = {"@UI"}
         )
 
-public class StartingPoint {
+public class Runtest {
 
 }
