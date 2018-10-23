@@ -6,12 +6,12 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 
-@CucumberOptions(
+@CucumberOptions(plugin={"pretty","json:target/cucumberreports.json"},
 		features = "src/test/resources",
         glue = "com.skilrock.stepdefinitions",
         tags = {"@UI"}
         )
 
-public class Runtest {
+public class RunTest {
 
 }

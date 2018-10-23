@@ -20,8 +20,11 @@ public class Steps {
 	public void click_on_login() throws Throwable {
 
 	 assertThat(login.clickOnLogin()).isTrue();   
-	    // Write code here that turns the phrase above into concrete actions
-	   // throw new PendingException();
+
 	}
 	
+	@When("^login is performed through api with (.*) and (.*)$")
+	public void perform_login(String username,String password) {
+		assertThat(login.performLogin(username,password)).isTrue();
+	}
 }

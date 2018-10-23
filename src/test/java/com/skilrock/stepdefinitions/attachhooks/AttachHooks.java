@@ -2,6 +2,8 @@ package com.skilrock.stepdefinitions.attachhooks;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.skilrock.dge.common.utils.ConfigManager;
 
@@ -12,8 +14,11 @@ public class AttachHooks {
 	
 	public static WebDriver driver;
 	
+	private static Logger logger = LoggerFactory.getLogger(AttachHooks.class);
+	
 	@Before
 	public void setUp() {
+		logger.info("Inside attachhooks setup");
 		System.setProperty("webdriver.chrome.driver", "/home/stpl/eclipse-workspace/Sample/chromedriver");
 		driver = new ChromeDriver();
 		ConfigManager.loadConfig();
@@ -25,7 +30,7 @@ public class AttachHooks {
 	public void tearDown() {
 		
 		driver.quit();
-		System.out.println("after");
+		logger.info("after tear down");
 	}
 
 }
